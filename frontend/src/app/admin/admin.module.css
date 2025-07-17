@@ -1,0 +1,294 @@
+.addButton {
+  background-color: #10B981;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.addButton:hover {
+  background-color: #059669;
+}
+
+.addButton:active {
+  background-color: #2b6cb0;
+}
+
+@media (max-width: 640px) {
+  .addButton {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+  }
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.statusApproved {
+  background-color: #D1FAE5;
+  color: #065F46;
+}
+
+.statusPending {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+
+.statusRejected {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+.statusCancelled {
+  background-color: #F3F4F6;
+  color: #6B7280;
+}
+
+.statusRefunded {
+  background-color: #DBEAFE;
+  color: #1E40AF;
+}
+
+.statusUnknown {
+  background-color: #E5E7EB;
+  color: #374151;
+}
+
+/* Layout principal */
+.adminLayoutContainer {
+  min-height: 100vh;
+  background: #fafbfc;
+}
+
+.adminHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #2563eb;
+  color: #fff;
+  position: relative;
+}
+
+.adminLogo {
+  font-size: 1.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.adminNavDesktop {
+  display: flex;
+  gap: 2rem;
+}
+
+.adminNavLink {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.adminNavLink:hover {
+  background: #1e40af;
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Sidebar para mobile */
+.adminSidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 70vw;
+  max-width: 300px;
+  height: 100vh;
+  background: #2563eb;
+  color: #fff;
+  z-index: 1000;
+  padding: 2rem 1rem 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  box-shadow: 2px 0 8px rgba(0,0,0,0.08);
+  animation: slideIn 0.2s;
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+.closeSidebar {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.adminMain {
+  padding: 2rem 0 2rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .adminNavDesktop {
+    display: none;
+  }
+  .menuButton {
+    display: block;
+  }
+}
+@media (min-width: 901px) {
+  .adminSidebar {
+    display: none;
+  }
+  .menuButton {
+    display: none;
+  }
+}
+
+.logoutButton {
+  background: #1e40af;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-left: 1.5rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.logoutButton:hover {
+  background: #111827;
+}
+
+.logoutButtonSidebar {
+  background: #1e40af;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.logoutButtonSidebar:hover {
+  background: #111827;
+}
+
+.adminModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 64, 175, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+.adminModal {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(30, 64, 175, 0.10);
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: center;
+}
+.adminModalTitle {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2563eb;
+  margin-bottom: 0.7rem;
+}
+.adminModalMessage {
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+.adminModalButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+.adminCancelButton {
+  background: #e5e7eb;
+  color: #1e40af;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.adminCancelButton:hover {
+  background: #cbd5e1;
+}
+.adminLogoutButton {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.adminLogoutButton:hover {
+  background: #b91c1c;
+}
+
+.adminSearchInput {
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 1.5rem;
+  font-size: 1.15rem;
+  outline: none;
+  margin-bottom: 2rem;
+  margin-top: 0.5rem;
+  background: #f1f5f9;
+  color: #1e293b;
+  box-shadow: 0 2px 12px rgba(30, 64, 175, 0.07);
+  transition: box-shadow 0.2s, background 0.2s;
+  width: 100%;
+  max-width: 420px;
+  display: block;
+}
+.adminSearchInput:focus {
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(37, 99, 235, 0.13);
+}
+
+/* Espaciado para la barra de búsqueda en el contenedor de tablas */
+.adminSearchBarContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+} 

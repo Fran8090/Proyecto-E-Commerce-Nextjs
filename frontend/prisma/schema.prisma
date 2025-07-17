@@ -1,0 +1,60 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Categoria {
+  id     Int     @id @default(autoincrement())
+  nombre String  @unique
+  libros Libro[]
+}
+
+model Libro {
+  id          Int          @id @default(autoincrement())
+  nombre      String
+  autor       String
+  img         String
+  categoriaId Int
+  precio      Float
+  stock       Int          @default(0)
+  categoria   Categoria    @relation(fields: [categoriaId], references: [id])
+  pedidoItems PedidoItem[]
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  nombre    String
+  apellido  String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  role      String   @default("user")
+  pedidos   Pedido[]
+}
+
+model Pedido {
+  id            Int          @id @default(autoincrement())
+  userId        Int
+  total         Float
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  paymentId     String?      // ID de la preferencia de pago de Mercado Pago
+  paymentStatus String?      // Estado del pago (pending, approved, rejected, etc)
+  user          User         @relation(fields: [userId], references: [id])
+  items         PedidoItem[]
+}
+
+model PedidoItem {
+  id       Int    @id @default(autoincrement())
+  pedidoId Int
+  libroId  Int
+  cantidad Int
+  precio   Float
+  libro    Libro  @relation(fields: [libroId], references: [id])
+  pedido   Pedido @relation(fields: [pedidoId], references: [id])
+} 

@@ -1,0 +1,238 @@
+.main {
+  padding: 2rem 0;
+  max-width: 100vw;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.featured {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cardContent {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.cardAuthor {
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.cardCategory {
+  color: #2c5282;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  background: #ebf8ff;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.cardPrice {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2f855a;
+  margin: 0.5rem 0;
+}
+
+.cardButton {
+  background: #4a90e2;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: auto;
+}
+
+.cardButton:hover {
+  background: #357abd;
+}
+
+.categories {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  background-color: white;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.categoryCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.categoryCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.categoryCard h3 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.categoryCard p {
+  color: #4a4a4a;
+  font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .featured,
+  .categories {
+    padding: 2rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .categoryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+
+  .cardTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardPrice {
+    font-size: 1.1rem;
+  }
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: #4a4a4a;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.error {
+  text-align: center;
+  padding: 2rem;
+  color: #c53030;
+  background-color: #fff5f5;
+  border-radius: 8px;
+  margin: 1rem;
+  font-size: 1.1rem;
+  border: 1px solid #feb2b2;
+}
+
+.welcome {
+  max-width: 800px;
+  margin: 3rem auto 2rem auto;
+  padding: 2.5rem 2rem;
+  background: rgba(255,255,255,0.85);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.welcomeText {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 1.2rem;
+  line-height: 1.7;
+}
+
+.homeBg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  filter: blur(2px) brightness(0.7);
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    padding: 1.5rem 0.5rem;
+  }
+} 
